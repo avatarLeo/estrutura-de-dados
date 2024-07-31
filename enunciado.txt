@@ -1,0 +1,23 @@
+
+Desafio 04
+
+Duplas
+EXCLUSIVAMENTE este desafio, vocês podem entrega dia 07/08
+Implemente o código da Lista duplamente encadeada para gerenciar pedidos de uma lanchonete.
+
+A ideia é armazenar:
+• Item de uma lista de itens do cardápio
+• Valor de cada item
+
+Valor total do pedido
+• Nome do cliente
+• Endereço de entrega
+• Forma de Pagamento (Pix, Dinheiro, Crédito ou Débito)
+
+Seu programa deve, a pedido do usuário, exibir na tela todos os pedidos feitos e o valor armazenado. Os pedidos são feitos durante a execução do programa.
+• Exiba os pedidos, bem como seus detalhes, do primeiro ao último
+• Exiba os valores do último ao primeiro
+• Exiba o valor total de todos os pedidos feito.
+• Extra: Prove que é bom --> Exiba o total dos pedidos por tipo de pagamento.
+
+Seu programa encerra ao digitar FIM na entrada de pedidos
