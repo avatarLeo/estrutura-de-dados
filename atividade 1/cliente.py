@@ -2,7 +2,7 @@ class Cliente:
     def __init__(self, nome:str, endere:str, anterior=None, proximo=None) -> None:
         self.nome = nome
         self.endereco = endere
-        self.pedido = None
+        self.pedido = list()
 
 
         self.anterior = anterior
@@ -23,3 +23,6 @@ class Cliente:
 
     def defineProximo (self, novoProximo):
         self.proximo = novoProximo
+
+    def add_pedido(self, pedi):
+        self.pedido.append(pedi)
