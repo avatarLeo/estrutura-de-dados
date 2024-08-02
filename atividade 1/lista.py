@@ -1,40 +1,43 @@
-#gerencia.py
-from elemento import Elemento
-
-primeiro = ultimo = None
 
 
+class Lista:
+    def __init__(self) -> None:
+        self.primeiro = self.ultimo = None
+
+    def add_cliente(self, cliente):
+        
+
+        while True:
+            novo = cliente
+
+            if self.primeiro == None:
+                self.primeiro = novo
+                self.ultimo = novo
+            else:
+                self.ultimo.defineProximo (novo)
+                novo.defineAnterior (self.ultimo)
+                self.ultimo = novo
 
 
-while True:
-    v1= input('Pedido ou 1 para encerrar: ')
+            break
 
-    if v1 != '1':
-        novo = Elemento(v1)
+    def relatorio(self):
 
-        if primeiro == None:
-            primeiro = novo
-            ultimo = novo
-        else:
-            ultimo.defineProximo (novo)
-            novo.defineAnterior (ultimo)
-            ultimo = novo
-    else: #o usuário digitou 1 là nin riba!
 
-        if primeiro != None:
+        if self.primeiro != None:
     #impressão da lista de pedidos
-            aux = primeiro
-            print('Lista de pedidos (A -> Z)')
+            aux = self.primeiro
+            print('Lista de clientes')
             while aux:
-                print(f'{aux}', end='<=>')
+                print(f'{aux}')
                 aux = aux.retornaProximo()
 
+    def reverse_relatorio(self):
+
             print()
-            aux = ultimo
+            aux = self.ultimo
             print('Lista de pedidos (Z -> A)')
 
             while aux:
                 print(f'{aux}', end='<=>')
                 aux = aux.retornaAnterior()
-
-        break
