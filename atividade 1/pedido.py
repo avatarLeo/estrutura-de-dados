@@ -27,3 +27,7 @@ class Pedido:
                     if k == 'id' and v == id:
                         print(f"{item.get('nome')} valor: {item.get('valor')}")
 
+    def confirma_pedido(self, forma_de_pagamneto):
+        self.pagamento.pagar(forma_de_pagamneto)
+
+

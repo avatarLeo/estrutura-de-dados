@@ -49,13 +49,14 @@ def pedido(nome):
 
                     try:
                         forma = int(input('Digite o número da forma de pagamento: '))
-                        if forma > 4 or forma < 1:
-                            print('Numero invalido')
-                        else:
-                            pedidos.pagamento(forma)
+                        if forma < 5 or forma > 0:
+                            pedidos.confirma_pedido(forma)
                             print('Pedido Realzado com sucesso!')
-                    except:
-                        print('Numero invalido')
+                            input()
+                            
+                    except Exception as erro:
+                        print('Numero invalido', erro)
+                        pedidos.itens.clear()
                 else:
                     pedidos.itens.clear()
                     print('Ó que pena que nada lhe agradou, volte sempre')
@@ -67,6 +68,7 @@ def pedido(nome):
                 for item in CARDAPIO:
                     for k, v in item.items():
                         if k == 'id' and v == pe:
+                            print('Adicionado...')
                             pedidos.add_pedido(pe)
             except:
                 print('Numero do pedido é inválido!')
@@ -81,3 +83,6 @@ def cliente_nao_encontrado():
     print()
     print('Ops')
     print('Cliente não encontrado tente novamente')
+
+if __name__ == '__main__':
+    pedido('jao')

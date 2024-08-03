@@ -18,3 +18,6 @@ class Pagamento:
     def pagar(self, forma):
         self.estado = True
         self.forma_pagamento = forma
+        
+    def checar_pagameto(self):
+        return self.estado, self.estado

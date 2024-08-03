@@ -38,9 +38,10 @@ while True:
                 nome = encontrar_cliente()
                 cliente = lista.buscar_cliente(nome)
                 if cliente:
-                    pedido(cliente.nome)
+                    p = pedido(cliente.nome)
+                    cliente.add_pedido(p)
                 else:
                     cliente_nao_encontrado()
             case '3':
-                print('tudo ok')
+                lista.relatorio(CARDAPIO)
 
