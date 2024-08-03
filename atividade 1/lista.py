@@ -41,3 +41,13 @@ class Lista:
             while aux:
                 print(f'{aux}', end='<=>')
                 aux = aux.retornaAnterior()
+
+    def buscar_cliente(self, nome):
+        if self.primeiro != None:
+            aux = self.primeiro
+            while aux:
+                if aux.nome == nome:
+                    return aux
+                aux = aux.retornaProximo()
+
+

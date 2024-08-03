@@ -15,5 +15,6 @@ class Pagamento:
     def relatorio(self):
         ...
 
-    def pagar(self):
+    def pagar(self, forma):
         self.estado = True
+        self.forma_pagamento = forma
