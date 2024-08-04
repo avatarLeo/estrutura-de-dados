@@ -4,24 +4,8 @@ from pedido import Pedido
 from cardapio import CARDAPIO
 from interface import *
 
-p = Pedido()
-# p.add_pedido(2)
-# p.add_pedido(4)
-# p.add_pedido(1)
-
-print(p.total(CARDAPIO))
-
-cliente1 = Cliente('José', 'Rua da jaca')
-cliente2 = Cliente('Miguel', 'Rua da jaca')
-cliente3 = Cliente('Paulo', 'Rua da jaca')
-cliente4 = Cliente('Roberto', 'Rua da jaca')
 
 lista = Lista()
-
-lista.add_cliente(cliente1) 
-lista.add_cliente(cliente2)
-lista.add_cliente(cliente3)
-lista.add_cliente(cliente4)
 
 while True:
 
@@ -39,9 +23,18 @@ while True:
                 cliente = lista.buscar_cliente(nome)
                 if cliente:
                     p = pedido(cliente.nome)
-                    cliente.add_pedido(p)
+                    if p:
+                        cliente.add_pedido(p)
                 else:
                     cliente_nao_encontrado()
             case '3':
                 lista.relatorio(CARDAPIO)
-
+            case '4':
+                lista.relatorio_por_pagamento_pix(CARDAPIO)
+                lista.relatorio_por_pagamento_dinheiro(CARDAPIO)
+                lista.relatorio_por_pagamento_debito(CARDAPIO)
+                lista.relatorio_por_pagamento_credito(CARDAPIO)
+            case '5':
+                lista.reverse_relatorio(CARDAPIO)
+            case _:
+                print('Opção inválida.')

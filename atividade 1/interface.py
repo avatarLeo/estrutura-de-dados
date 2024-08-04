@@ -6,10 +6,13 @@ def menu_principal():
     print('|===========================================|')
     print('| Olá seja bem vindo(a) como posso ajudar   |')
     print('| Escolha uma opção                         |')
-    print('|                                           |')
+    print('|===========================================|')
     print('| Cadastrar um cliente [1]                  |')
     print('| Adicionar pedido [2]                      |')
     print('| Mostrar pedidos [3]                       |')
+    print('| Mostrar pedidos por forma de pagamento[4] |')
+    print('| Mostrar relatório do ultimo ao primeiro [5]')
+    print('| Para sair [FIM]                           |')
     print('|===========================================|')
 
     op = input('>')
@@ -19,7 +22,7 @@ def menu_principal():
 def cadastrar_cliente():
     print()
     nome = input('Informe o seu nome: ')
-    endereco = input('Informe o seu nome: ')
+    endereco = input('Informe o seu endereço: ')
 
     return nome, endereco
 
@@ -39,7 +42,7 @@ def pedido(nome):
                 print()
                 print('Confira o pedido')
                 pedidos.lista_de_pedidos(CARDAPIO)
-                con = input('Confirma o pedido? [S | N]')
+                con = input('Confirma o pedido? [S | N] ')
                 if con.lower() == 's':
                     print('Forma de pagamento: ')
                     print('Pix [1]')
@@ -55,16 +58,18 @@ def pedido(nome):
                             input()
                             
                     except Exception as erro:
-                        print('Numero invalido', erro)
-                        pedidos.itens.clear()
+                        print('Numero invalido')
                 else:
-                    pedidos.itens.clear()
+                    pedidos = None
                     print('Ó que pena que nada lhe agradou, volte sempre')
+                    print()
 
             break
         else:
             try:
                 pe = int(pe)
+                if len(CARDAPIO) < pe or pe < 1:
+                    print('Número do pidido inválido, tente novamente')
                 for item in CARDAPIO:
                     for k, v in item.items():
                         if k == 'id' and v == pe:

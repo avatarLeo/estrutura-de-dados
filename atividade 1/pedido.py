@@ -31,3 +31,5 @@ class Pedido:
         self.pagamento.pagar(forma_de_pagamneto)
 
 
+    def forma_de_pagamento(self):
+        return self.pagamento.checar_pagameto()

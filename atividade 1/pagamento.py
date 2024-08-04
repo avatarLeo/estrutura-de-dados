@@ -20,4 +20,4 @@ class Pagamento:
         self.forma_pagamento = forma
         
     def checar_pagameto(self):
-        return self.estado, self.estado
+        return self.forma_pagamento, self.estado

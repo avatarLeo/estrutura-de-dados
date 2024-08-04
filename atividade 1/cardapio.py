@@ -7,3 +7,4 @@ CARDAPIO = [
     {'nome':'Suco de laranja', 'id':6, 'valor':10},
     {'nome':'Açai', 'id':7, 'valor':10},
 ]
+print(len(CARDAPIO))
